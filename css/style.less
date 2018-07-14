@@ -1,0 +1,152 @@
+/* variables */
+
+@darkGrey: #353535;
+@lightGrey: #a1a9b0;
+@grey: #8c9398;
+@greyBg: #f3f5f8;
+@greyBorderDots: #d2d7dd;
+@blue: #3dc9b3;
+@darkBlue: #309383;
+@font: 'Nunito', Arial, sans-serif;
+
+/* end of variables */
+
+/* helper classes */
+
+.text-grey {
+  color: @lightGrey;
+}
+
+.text-black {
+  color: @darkGrey;
+}
+
+.text-italic {
+  font-style: italic;
+}
+
+.text-regular {
+  line-height: 2;
+}
+
+.bg-grey {
+  background-color: @greyBg;
+}
+
+.block-padding {
+  padding-top: 5rem;
+  padding-bottom: 7rem;
+}
+
+.button-blue {
+  text-transform: uppercase;
+  color: #fff !important;
+  background: @blue;
+  display: inline-block;
+  letter-spacing: 0.28em;
+  border-radius: 4px;
+  padding: 1.4em 1.8em;
+  line-height: 1;
+  font-weight: 600;
+  box-shadow: 0 3px 0 0 @darkBlue;
+  transition: background-color 0.3s;
+  cursor: pointer;
+
+  &:hover {
+    background: darken(@blue, 5%);
+  }
+}
+
+/* end of helper classes */
+
+html {
+ font-size: 12px;
+}
+
+body {
+  min-width: 300px;
+  color: @grey;
+  font-family: @font;
+  font-weight: 400;
+  font-style: normal;
+}
+
+h2 {
+  color: @darkGrey;
+  letter-spacing: 0.25em;
+  font-size: 1rem;
+  font-weight: 700;
+  text-transform: uppercase;
+  text-align: center;
+  padding-bottom: 40px;
+  margin-bottom: 2.5rem;
+  position: relative;
+  line-height: 1.4;
+
+  &::before {
+    position: absolute;
+    z-index: 2;
+    left: 50%;
+    margin-left: -34px;
+    bottom: 12px;
+    padding: 0 30px;
+    content: '';
+    width: 65px;
+    height: 13px;
+    background: #fff url(../img/triangle-down.png) no-repeat center center;
+  }
+
+  &::after {
+    position: absolute;
+    width: 100%;
+    height: 2px;
+    background: linear-gradient(to right, #fff 3px, @greyBorderDots 3px, @greyBorderDots 5px, white 5px) repeat-x;
+    background-size: 8px;
+    content: '';
+    left: 0;
+    bottom: 19px;
+    z-index: 1;
+  }
+}
+
+a {
+  text-decoration: none;
+  font-weight: 400;
+  color: @grey;
+  transition: color 0.3s;
+}
+
+a:hover {
+  text-decoration: none;
+  color: @darkGrey;
+}
+
+.site-header {
+  width: 100%;
+  min-height: 80vh;
+  background: #ecf0f3 url(../img/bg.jpg) no-repeat center center;
+  background-size: cover;
+  text-align: center;
+  display: flex;
+  flex-direction: column;
+  padding: 18vh 15px 0;
+  letter-spacing: 0.18em;
+
+  h1 {
+    text-transform: uppercase;
+    font-size: 2rem;
+    color: @darkGrey;
+    margin-bottom: 0.6em;
+    font-weight: 400;
+    letter-spacing: 0.35em;
+    cursor: default;
+  }
+
+  a {
+    font-weight: 600;
+  }
+
+  .button-blue {
+    margin-top: 2em;
+  }
+}
