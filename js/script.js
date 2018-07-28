@@ -1,3 +1,5 @@
+AOS.init();
+
 new Flickity( '#carousel-responsive', {
   draggable: true,
   autoPlay: 3000,
@@ -7,5 +9,6 @@ new Flickity( '#carousel-responsive', {
 new Flickity( '#carousel-features', {
   draggable: true,
   prevNextButtons: false,
-  cellAlign: 'left'
+  contain: true,
+  groupCells: true
 });
